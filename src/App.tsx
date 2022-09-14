@@ -1,10 +1,5 @@
 import './styles.css';
-
+import Nav from './components/Nav';
 export default function App() {
-	return (
-		<div className="App">
-			<h1>Hello world</h1>
-			<h2>Start editing to see some magic happen!</h2>
-		</div>
-	);
+	return <Nav />;
 }
