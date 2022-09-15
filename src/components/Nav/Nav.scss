@@ -1,0 +1,195 @@
+$nav-text-color: #000;
+$nav-text-color_hover: #fff;
+$gray-dark-darkest: #1a1a1a;
+$gray-dark-dark: #202020;
+$gray-dark-light: #252525;
+$gray-dark-lightest: #313131;
+$gradient-blue: linear-gradient(to left, #0463db 0%, #0b88e6 33%, #13aff2 66%, #19d2fc 100%);
+@media screen and (max-width: 768px) {
+    .nav {
+        visibility: hidden;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    width: 100vw;
+    height: 3vh;
+    // max-height: 26vh;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $gray-dark-darkest;
+    z-index: 999;
+    box-shadow: -1rem 0 3rem #000;
+}
+
+.nav_container {
+    width: 100%;
+    height: 100%;
+    // max-width: 1280px;
+    max-width: 65vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    width: 15vh;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.nav__cta {
+    // width: 250px;
+    // width: 30vh;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+    // font-size: 1vh;
+    &:hover {
+        cursor: pointer;
+    }
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        // width: 280px !important;
+        width: 30vh;
+        height: 45px;
+        width: clamp(250px, 30vh, 250px);
+        // font-size: 1.75vh;
+        font-size: 1rem;
+        // font-size: 1vh;
+        // background-image: $gradient-blue;
+        background-image: linear-gradient(to left, #da2c4d 0%, #f8ab37 100%);
+        // background-color: #262627;
+        border-radius: 3px;
+        color: #ffffff;
+        transition: all 0s ease-in-out;
+        height: 50px;
+        // height: clamp(50px, 100%, 60px);
+        &:hover {
+            transition: all 0s ease-in-out;
+            background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+            background-color: #fff !important;
+            color: #000 !important;
+        }
+    }
+}
+
+.nav__logo img {
+    height: 24px;
+    margin: 0 5px;
+}
+
+// .nav__logo__img {
+//     animation-name: ckw;
+//     animation-duration: 1s;
+//     /* Things added */
+//     animation-iteration-count: infinite;
+//     transform-origin: 50% 50%;
+//     display: inline-block;
+// }
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.nav__logo:hover .nav__logo__img {
+    animation-name: ckw;
+    animation-duration: 0.5s;
+    transform-origin: 50% 50%;
+}
+
+.nav__logo:hover * {
+    // transform: scale(1.01, 1.01);
+    transition: transform 0.1s ease-in-out;
+    // box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav__logo__text {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem; // font-size: 1vh;
+    color: #fff;
+}
+
+#nav_logo__word1 {
+    margin-right: -10px;
+}
+
+.nav__buttons {
+    width: 50%;
+    height: 100%;
+    max-width: 750px;
+    display: flex;
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__button {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    background-color: $gray-dark-light;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.1s ease-in-out;
+    }
+}
+
+@keyframes navFadeIn {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-10px) translateY(-1px);
+    }
+}
+
+.nav__button img {
+    transform: translateY(-50px);
+    opacity: 0.5;
+    width: 1vw;
+    max-width: 20px;
+    filter: grayscale(0.5);
+}
+
+.nav__button:hover img {
+    animation: navFadeIn 0.3s;
+    transition: 0.3s;
+    opacity: 1;
+    transform: translateX(-10px) translateY(-1px);
+}
